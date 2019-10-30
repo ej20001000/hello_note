@@ -9,4 +9,4 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
 </body>
-</html>d
+</html>dd
