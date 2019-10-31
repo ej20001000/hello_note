@@ -392,7 +392,7 @@
 					.open(
 							"addMenu.jsp",
 							'popUpWindow',
-							'height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+							'height=700,width=600,left=300,top=300,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
 		}
 	</script>
 </body>
