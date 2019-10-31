@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello
+<input type="text" id="menuName" name="menuName">
+
 </body>
 </html>
