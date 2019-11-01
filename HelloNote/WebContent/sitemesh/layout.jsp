@@ -111,9 +111,7 @@
 			<section class="cta-section theme-bg-light py-5">
 				<div class="container text-center">
 					<h2 class="heading">
-						public class Main{ <br>public static void main(String[]
-						args){<br> System.out.println("Hello Note!");<br> }<br>
-						}
+						
 					</h2>
 					<div class="intro">Welcome to my blog. Subscribe and get my
 						latest blog post in your inbox.</div>
