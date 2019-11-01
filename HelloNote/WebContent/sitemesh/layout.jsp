@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
+	prefix="decorator"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
@@ -85,18 +86,18 @@
 							href="index.html"><i class="fas fa-home fa-fw mr-2"></i>홈<span
 								class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>사이트
-								관리</a></li>
+							href="blog-post.html"><i
+								class="fas fa-id-card-alt fa-fw mr-2"></i>사이트 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
-								class="fas fa-user fa-fw mr-2"></i>체크 리스트</a></li>
+								class="fas fa-check-square fa-fw mr-2"></i>체크 리스트</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
-								class="fas fa-user fa-fw mr-2"></i>기념일 관리</a></li>
+								class="fas fa-birthday-cake fa-fw mr-2"></i>기념일 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
-								class="fas fa-user fa-fw mr-2"></i>메모 관리</a></li>
+								class="fas fa-sticky-note fa-fw mr-2"></i>메모 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
-								class="fas fa-user fa-fw mr-2"></i>내 계좌 번호 관리</a></li>
+								class="fas fa-file-invoice-dollar fa-fw mr-2"></i>내 계좌 번호 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
-								class="fas fa-user fa-fw mr-2"></i>캘린더</a></li>
+								class="fas fa-calendar-alt fa-fw mr-2"></i>캘린더</a></li>
 					</ul>
 
 					<div class="my-2 my-md-3">
@@ -130,7 +131,7 @@
 			</section>
 			<section class="blog-list px-3 py-5 p-md-5">
 				<div class="container">
-				<decorator:body/>
+					<decorator:body />
 					<div class="item mb-5">
 						<div class="media">
 							<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
