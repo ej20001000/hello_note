@@ -13,12 +13,14 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="assets/css/button.css">
 </head>
 <body>
-<br>
+	<br>
 	<div class="col-md-4">
 		<div class="col-md-6">
-			<input type="text" id="menuName" name="menuName"> : 메뉴 이름
+			<input type="text" id="menuName" name="menuName"
+				placeholder="Menu Name">
 			<div class="funkyradio">
 				<div class="funkyradio-primary">
 					<input type="radio" name="radio" id="radio1" checked /> <label
@@ -47,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">생성</button>
+	<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="submit">생성</button>
 </body>
 </html>
