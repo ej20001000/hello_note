@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.hello.command.BankAcountCommand;
 import co.hello.command.Command;
 
 
@@ -26,6 +27,7 @@ public class MainController extends HttpServlet {
     public MainController() {
     	map = new HashMap<String,Command>();
     	map.put("/index.do", new IndexCommand());
+    	map.put("/bankAcount.do",new BankAcountCommand());
       
     }
 
