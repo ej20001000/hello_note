@@ -31,8 +31,9 @@
 	crossorigin="anonymous"></script>
 
 <!-- Theme CSS -->
-<link id="theme-style" rel="stylesheet" href="assets/css/main/theme-1.css">
-
+<link id="theme-style" rel="stylesheet"
+	href="assets/css/main/theme-1.css">
+<decorator:head />
 </head>
 
 <body>
@@ -94,7 +95,7 @@
 								class="fas fa-birthday-cake fa-fw mr-2"></i>기념일 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
 								class="fas fa-sticky-note fa-fw mr-2"></i>메모 관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html"><i
+						<li class="nav-item"><a class="nav-link" href="bankAcount.do"><i
 								class="fas fa-file-invoice-dollar fa-fw mr-2"></i>내 계좌 번호 관리</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html"><i
 								class="fas fa-calendar-alt fa-fw mr-2"></i>캘린더</a></li>
