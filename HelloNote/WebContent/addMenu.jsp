@@ -13,7 +13,7 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="assets/css/button.css">
+<link rel="stylesheet" href="assets/css/main/button.css">
 </head>
 <body>
 	<br>

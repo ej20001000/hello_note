@@ -31,7 +31,7 @@
 	crossorigin="anonymous"></script>
 
 <!-- Theme CSS -->
-<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+<link id="theme-style" rel="stylesheet" href="assets/css/main/theme-1.css">
 
 </head>
 
