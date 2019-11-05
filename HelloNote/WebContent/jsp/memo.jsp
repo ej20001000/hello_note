@@ -44,7 +44,7 @@
 		
 		$('#edit').on('click', function(){
 			var $modalContent=$(this).parent();
-			console.log($modalContent.eq(0).text());
+			console.log($('#modal-title').text());
 			$modalContent.append('<textarea rows="1" style="width: 100%" id="title-edit">+'+$modalContent.eq(2).text+'');
 		})
 
