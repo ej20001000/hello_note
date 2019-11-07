@@ -136,7 +136,7 @@
 				</div>
 		</a></li>
 	</ul>
-	<li class="icon"><i class="far fa-plus-square fa-4x" id="add"></i></li>
+	<li class="icon"><i class="fas fa-plus-circle fa-4x" id="add"></i></li>
 	<div class="modal" id="myModal">
 		<div class="modal-content" id="modal-content">
 			<span class="close">&times;</span>
