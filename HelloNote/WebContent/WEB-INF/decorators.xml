@@ -2,7 +2,7 @@
 <decorators defaultdir="/sitemesh">
 
 	<decorator name="basic-theme" page="layout.jsp">
-		<pattern>/index.jsp</pattern>
- 	<pattern>/basic_*</pattern> 
+		<pattern>/index.do</pattern>
+		<pattern>/*</pattern>
 	</decorator>
 </decorators>
