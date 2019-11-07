@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../assets/css/menu/memo.css">
+<link rel="stylesheet" href="assets/css/menu/memo.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -105,8 +105,8 @@
 							$('#memoul')
 									.append(
 											'<li class="memoli"><a id="memo'+i
-											+'" class="memo"><div class="title-box"><h2 id="title'+i
-											+'" class="title">Title,</h2></div><div class="text-box"><p id="text'+i
+											+'" class="memo"><div class="title-box"><h3 id="title'+i
+											+'" class="title">Title,</h3></div><div class="text-box"><p id="text'+i
 											+'" class="text">Text</p></div></a></li>');
 							i = i + 1;
 						});
@@ -129,7 +129,7 @@
 	<ul class="memoul" id="memoul">
 		<li class="memoli"><a id="memo" class="memo">
 				<div class="title-box">
-					<h2 id="title" class="title">Title,</h2>
+					<h3 id="title" class="title">Title,</h3>
 				</div>
 				<div class="text-box">
 					<p id="text" class="text">Text</p>
