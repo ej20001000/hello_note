@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
-id="WebApp_ID" version="3.1">
-<!-- <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
-<!-- xmlns="http://java.sun.com/xml/ns/javaee" -->
-<!-- xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" -->
-<!-- id="WebApp_ID" version="3.0"> -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>HelloNote</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
    <servlet>
-  	<servlet-name>Controller</servlet-name>
-  	<servlet-class>co.hello.controller.MainController</servlet-class>
+     <servlet-name>Controller</servlet-name>
+     <servlet-class>co.hello.controller.MainController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>Controller</servlet-name>
-  	<url-pattern>*.do</url-pattern>  
+     <servlet-name>Controller</servlet-name>
+     <url-pattern>*.do</url-pattern>  
   </servlet-mapping>
   
   
   <!-- 레이아웃을 위한 sitemesh -->
-	<filter>
-		<filter-name>sitemesh</filter-name>
-		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
-	</filter>
+   <filter>
+      <filter-name>sitemesh</filter-name>
+      <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+   </filter>
 
-	<filter-mapping>
-		<filter-name>sitemesh</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+   <filter-mapping>
+      <filter-name>sitemesh</filter-name>
+      <url-pattern>/*</url-pattern>
+   </filter-mapping>
 </web-app>
