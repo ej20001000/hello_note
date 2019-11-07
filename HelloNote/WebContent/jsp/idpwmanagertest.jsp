@@ -49,10 +49,18 @@
    color: black;
    text-decoration: none;
    cursor: pointer;
-}</style>
+}
+</style>
 <script type="text/javascript"></script>
 </head>
     <script>
+    	$(function(){
+    		$('#specification').on('click', function(){
+    			$('#myModal').show();
+    		})
+    		
+    	})
+    
         function popup(){
             var url = "idmenu.jsp";
             var name = "popup test";
@@ -91,7 +99,7 @@
 				<td align="center">bs930702</td>
 			</tr>
 			<tr>
-				<td align="center"><a onclick="modal" class="btn btn-md btn-default">상세정보</a></td>
+				<td align="center"><a id="specification" class="btn btn-md btn-default">상세정보</a></td>
 				<td align="center"><a href="#" class="btn btn-md btn-default">메뉴열기</a></td>
 			</tr>
 		</table>

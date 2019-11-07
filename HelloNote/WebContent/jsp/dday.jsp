@@ -8,6 +8,11 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/menu/dday.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Fira+Sans|Jua&display=swap"
+	rel="stylesheet">
 <script>
 	$(function() {
 		var i = 1;
@@ -22,67 +27,58 @@
 								return;
 							}
 
-							$('#add')
-									.before(
-											'<div id="dday'+i
-											+'"><input style="margin-right: 100px;" type="text" class="ddayInput" id="ddayName'+i
-											+'"><input type="date" id="ddayDate'+i
-											+'"><button id="ddaySubmit">등록</button></div>');
-							i = i + 1;
+							$('#ddayTable')
+									.append(
+											'<tr id="dday'+i
+											+'"><td><input style="width: 100%;" type="text" class="ddayInput" id="ddayNameInput"></td><td style="width: 10%;" class="theDay"><input type="date" id="ddayDateInput"></td></tr>');
+							$('#add').hide();
+							$('#confirm').show();
+
 						});
 
 		// 날짜 및 이름 입력 후 확인 버튼 누르면 출력  변환
-		$('#mainContainer').on(
-				'click',
-				'div button',
-				function() {
-					// 입력한 날짜 값 변수 지정
-					var inputDate = new Date($(this).parent().children().eq(1)
-							.val());
-					// 현재 날짜 값 불러옴
-					var todate = new Date();
-					// 날짜 갭 가져옴
-					var gap = todate.getTime() - inputDate.getTime();
-					// dday 값으로 변환
-					gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+		$('#confirm').on('click', function() {
+			// 입력한 날짜 값 변수 지정
+			var inputDate = new Date($('#ddayDateInput').val());
+			// 현재 날짜 값 불러옴
+			var todate = new Date();
+			// 입력 이름 변수
+			var inputName = $('#ddayNameInput').val();
+			// 날짜 갭 가져옴
+			var gap = todate.getTime() - inputDate.getTime();
+			// dday 값으로 변환
+			gap = Math.floor(gap / (1000 * 60 * 60 * 24));
 
-					// 폼 체크
-					if (isNaN(inputDate.getTime())
-							|| !$(this).parent().children().eq(0).val()) {
-						alert('값 입력부터 제대로 하시지?');
-						return;
-					}
+			// 폼 체크
+			if (isNaN(inputDate.getTime()) || !inputName) {
+				alert('값 입력부터 제대로 하시지?');
+				return;
+			}
 
-					// 입력 날짜가 현재 날짜 전 이면
-					if (gap > 0) {
-						$('#ddayTable').append(
-								'<tr><td style="padding-right: 100px">'
-										+ $(this).parent().children().eq(0)
-												.val() + '</td><td>D+' + gap
-										+ '</td></tr>');
-					}
-					// 입력 날짜가 현재 날짜면
-					else if (gap == 0) {
-						$('#ddayTable').append(
-								'<tr><td style="padding-right: 100px">'
-										+ $(this).parent().children().eq(0)
-												.val()
-										+ '</td><td>D-DAY</td></tr>');
-					}
-					//입력 날짜가 후면
-					else if (gap < 0) {
-						$('#ddayTable').append(
-								'<tr><td style="padding-right: 100px">'
-										+ $(this).parent().children().eq(0)
-												.val() + '</td><td>D' + gap
-										+ '</td></tr>');
-					}
+			// 입력 날짜가 현재 날짜 전 이면
+			if (gap > 0) {
+				$('#dday' + i).children().eq(0).append(inputName);
+				$('#dday' + i).children().eq(1).append('D+' + gap);
+			}
+			// 입력 날짜가 현재 날짜면
+			else if (gap == 0) {
+				$('#dday' + i).children().eq(0).append(inputName);
+				$('#dday' + i).children().eq(1).append('D-DAY');
+			}
+			//입력 날짜가 후면
+			else if (gap < 0) {
+				$('#dday' + i).children().eq(0).append(inputName);
+				$('#dday' + i).children().eq(1).append('D' + gap);
+			}
 
-					//입력 폼들 지움
-					$(this).parent().children().eq(1).remove();
-					$(this).parent().children().eq(0).remove();
-					$(this).remove();
-				})
+			//입력 폼들 지움
+			$('#ddayNameInput').remove();
+			$('#ddayDateInput').remove();
+			$('#confirm').hide();
+			$('#add').show();
+
+			i = i + 1;
+		})
 
 		//순서 나열은 DB단위에서 해결
 	})
@@ -90,8 +86,9 @@
 </head>
 <body>
 	<div id="mainContainer" align="center">
-		<table id="ddayTable"></table>
-		<i class="far fa-plus-square fa-4x" id="add"></i>
+		<table id="ddayTable" style="width: 40%"></table>
+		<i class="far fa-plus-square fa-4x" id="add"></i> <i
+			style="display: none;" class="far fa-check-square fa-4x" id="confirm"</i>
 	</div>
 </body>
 </html>
