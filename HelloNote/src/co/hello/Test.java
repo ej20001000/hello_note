@@ -1,4 +1,4 @@
-package co.hello.test;
+package co.hello;
 
 public class Test {
 
