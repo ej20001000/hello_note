@@ -54,7 +54,7 @@
 				<td align="center">bs930702</td>
 			</tr>
 			<tr>
-				<td align="center"><a onclick="popup();" class="btn btn-md btn-default">상세정보</a></td>
+				<td align="center"><a onclick="popup()" class="btn btn-md btn-default">상세정보</a></td>
 				<td align="center"><a href="#" class="btn btn-md btn-default">메뉴열기</a></td>
 			</tr>
 		</table>
