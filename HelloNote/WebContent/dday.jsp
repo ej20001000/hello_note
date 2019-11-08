@@ -49,7 +49,7 @@
 				'click',
 				function() {
 					// 입력한 날짜 값 변수 지정
-					var inputDate = new Date($('#ddayDateInput').val());
+					var in.putDate = new Date($('#ddayDateInput').val());
 					// 현재 날짜 값 불러옴
 					var todate = new Date();
 					// 입력 이름 변수
