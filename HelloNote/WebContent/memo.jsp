@@ -135,6 +135,7 @@
 				<div class="text-box">
 					<p id="text" class="text">Text</p>
 				</div>
+				
 		</a></li>
 	</ul>
 	<li class="icon"><i class="fas fa-plus-circle fa-4x" id="add"></i></li>

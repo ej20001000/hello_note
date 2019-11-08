@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/list.css">
+
 </head>
 <body>
 	<button class="btn-nav">
@@ -48,7 +49,31 @@
 	</aside>
 	<aside class="right-side">
 		<div class="text-con">
-			<span class="underline-left">상세정보 창</span>
+			<span class="underline-left">
+	<div align="center">
+		<table  class="table table-striped " style="width:50%; float: center;" >
+			<tr>
+				<td align="center"><b>아이디:</b></td>
+				<td align="center"><b>bs930702</b></td>
+			</tr>
+			<tr>
+				<td align="center">비밀번호:</td>
+				<td align="center">********<button>조회</button></td>
+			</tr>
+			<tr>
+				<td align="center">사이트:</td>
+				<td align="center">www.naver.com</td>
+			</tr>
+			<tr>
+				<td align="center">메모:</td>
+				<td align="center">ㅇㄴㅇㄴㅁㅇㅇ</td>
+			</tr>
+			<tr>
+				<td align="center"><a href="idmenu.jsp" class="btn btn-md btn-default">수정</a></td>
+				<td align="center"><a onclick="self.close();" class="btn btn-md btn-default">닫기</a></td>
+			</tr>
+		</table>
+	</div></span>
 		</div>
 	</aside>
 
