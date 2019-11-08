@@ -96,6 +96,7 @@
 	})
 </script>
 </head>
+
 <body>
 	<div id="mainContainer" align="center">
 		<table id="ddayTable" style="width: 80%"></table>
