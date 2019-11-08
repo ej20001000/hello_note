@@ -15,7 +15,7 @@
 <script>
 	$(function() {
 		var modal = $('#myModal');
-		var span = $('.close').eq(0);
+		var span = $('#modalClose');
 		var $modal = document.getElementById('myModal');
 		var a = 0;
 		var i = 1;
@@ -47,8 +47,9 @@
 											'<div style="width: 100%; margin-top: 20px;" id="modal-text" class="modal-text">'
 													+ $memos[1].trim()
 													+ '</div>');
-							$('#modal-content').prepend(
-									'<button id="edit">편집</button>');
+							$('#modal-content')
+									.prepend(
+											'<button style="width: 50px; display: inline" id="edit">편집</button>');
 							$('#modal-content').focus();
 							a = $(this).attr('id').replace(/memo/, '');
 						});
@@ -139,7 +140,7 @@
 	<li class="icon"><i class="fas fa-plus-circle fa-4x" id="add"></i></li>
 	<div class="modal" id="myModal">
 		<div class="modal-content" id="modal-content">
-			<span class="close">&times;</span>
+			<span class="close" id="modalClose" style="float: right; width: 30px;">&times;</span>
 		</div>
 	</div>
 </body>
