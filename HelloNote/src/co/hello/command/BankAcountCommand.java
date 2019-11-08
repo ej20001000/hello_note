@@ -12,7 +12,7 @@ public class BankAcountCommand implements Command{
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "banktest.jsp";
+		return "banklist.jsp";
 	}
 
 }
