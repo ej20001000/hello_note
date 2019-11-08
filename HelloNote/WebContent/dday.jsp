@@ -8,8 +8,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="assets/css/menu/dday.css">
+<link rel="stylesheet" type="text/css" href="assets/css/menu/dday.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Fira+Sans|Jua&display=swap"
 	rel="stylesheet">
@@ -17,8 +16,13 @@
 	$(function() {
 		var i = 1;
 
+		// 삭제
+		$('#ddayTable').on('click', 'tr td:nth-child(2) span', function(){
+			$(this).parent().parent().remove();
+		});
+		
 		//수정 로직
-		$('#ddayTable').on('click', 'tr td span', function() {
+		$('#ddayTable').on('click', 'tr td:nth-child(1) span', function() {
 			var $tr = $(this).parent().parent();
 			console.log($tr);
 
@@ -41,7 +45,6 @@
 											+'"><td><input style="width: 100%;" type="text" class="ddayInput" id="ddayNameInput"></td><td style="width: 10%;" class="theDay"><input type="date" id="ddayDateInput"></td></tr>');
 							$('#add').hide();
 							$('#confirm').show();
-
 						});
 
 		// 날짜 및 이름 입력 후 확인 버튼 누르면 출력  변환
@@ -49,7 +52,7 @@
 				'click',
 				function() {
 					// 입력한 날짜 값 변수 지정
-					var in.putDate = new Date($('#ddayDateInput').val());
+					var inputDate = new Date($('#ddayDateInput').val());
 					// 현재 날짜 값 불러옴
 					var todate = new Date();
 					// 입력 이름 변수
@@ -66,21 +69,21 @@
 					}
 
 					$('#dday' + i).children().eq(0).append(
-							'<span>' + inputName + '</span>');
+							'<span id="ddayName'+i+'">' + inputName + '</span>');
 					// 입력 날짜가 현재 날짜 전 이면
 					if (gap > 0) {
 						$('#dday' + i).children().eq(1).append(
-								'<span>D+' + gap + '</span>');
+								'<span id="ddayDate'+i+'">D+' + gap + '</span>');
 					}
 					// 입력 날짜가 현재 날짜면
 					else if (gap == 0) {
 						$('#dday' + i).children().eq(1).append(
-								'<span>D-DAY</span>');
+								'<span id="ddayDate'+i+'">D-DAY</span>');
 					}
 					//입력 날짜가 후면
 					else if (gap < 0) {
 						$('#dday' + i).children().eq(1).append(
-								'<span>D' + gap + '</span>');
+								'<span id="ddayDate'+i+'">D' + gap + '</span>');
 					}
 
 					//입력 폼들 지움
@@ -98,8 +101,11 @@
 </head>
 <body>
 	<div id="mainContainer" align="center">
+	기념일 이름 클릭 시 편집/날짜 클릭 시 삭제
 		<table id="ddayTable" style="width: 80%"></table>
-		<i class="far fa-plus-square fa-4x" id="add"></i> <i style="display: none;" class="far fa-check-square fa-4x" id="confirm"> </i>
+		<i class="far fa-plus-square fa-4x" id="add"></i> <i
+			style="display: none;" class="far fa-check-square fa-4x" id="confirm">
+		</i>
 	</div>
 </body>
 </html>

@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="assets/css/menu/memo.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,9 +46,10 @@
 											'<div style="width: 100%; margin-top: 20px;" id="modal-text" class="modal-text">'
 													+ $memos[1].trim()
 													+ '</div>');
-							$('#modal-content')
-									.prepend(
-											'<button style="width: 50px; display: inline" id="edit">편집</button>');
+							$('#modal-content').prepend(
+									'<button id="delete">삭제</button>');
+							$('#modal-content').prepend(
+									'<button id="edit">편집</button>');
 							$('#modal-content').focus();
 							a = $(this).attr('id').replace(/memo/, '');
 						});
@@ -73,6 +73,10 @@
 							$('#edit').html('완료');
 							$('#edit').attr('id', 'edit-done');
 						});
+		
+		$('#modal-content').on('click', '#delete', function(){
+			
+		});
 
 		$('#modal-content').on(
 				'click',
@@ -140,7 +144,8 @@
 	<li class="icon"><i class="fas fa-plus-circle fa-4x" id="add"></i></li>
 	<div class="modal" id="myModal">
 		<div class="modal-content" id="modal-content">
-			<span class="close" id="modalClose" style="float: right; width: 30px;">&times;</span>
+			<span class="close" id="modalClose"
+				style="float: right; width: 30px;">&times;</span>
 		</div>
 	</div>
 </body>
