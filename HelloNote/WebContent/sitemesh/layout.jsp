@@ -63,17 +63,10 @@
                <span class="navbar-toggler-icon"></span>
             </button>
 
-<<<<<<< HEAD
 				<div id="navigation" class="collapse navbar-collapse flex-column">
 					<div class="profile-section pt-3 pt-lg-0">
 						<img class="profile-image mb-3 rounded-circle mx-auto"
 							src="assets/images/진지.png" alt="image">
-=======
-            <div id="navigation" class="collapse navbar-collapse flex-column">
-               <div class="profile-section pt-3 pt-lg-0">
-                  <img class="profile-image mb-3 rounded-circle mx-auto"
-                     src="assets/images/profile.png" alt="image">
->>>>>>> branch 'master' of https://github.com/ej20001000/hello_note.git
 
                   <div class="bio mb-3">
                      Hi, my name is Anthony Doe. Briefly introduce yourself here. You
