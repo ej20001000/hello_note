@@ -99,8 +99,7 @@
 <body>
 	<div id="mainContainer" align="center">
 		<table id="ddayTable" style="width: 80%"></table>
-		<i class="far fa-plus-square fa-4x" id="add"></i> <i
-			style="display: none;" class="far fa-check-square fa-4x" id="confirm"</i>
+		<i class="far fa-plus-square fa-4x" id="add"></i> <i style="display: none;" class="far fa-check-square fa-4x" id="confirm"> </i>
 	</div>
 </body>
 </html>
