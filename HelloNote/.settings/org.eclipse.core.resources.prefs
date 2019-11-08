@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//WebContent/basic_calendar.jsp=UTF-8
+encoding//WebContent/calendar.jsp=UTF-8
+=======
 encoding//WebContent/jsp/idmenu.jsp=UTF-8
+>>>>>>> branch 'master' of https://github.com/ej20001000/hello_note.git

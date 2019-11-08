@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/sitemesh">
-
 	<decorator name="basic-theme" page="layout.jsp">
 		<pattern>/index.do</pattern>
 		<pattern>/basic_*</pattern>

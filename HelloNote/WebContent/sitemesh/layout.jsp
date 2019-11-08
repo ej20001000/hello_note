@@ -5,7 +5,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ko">
+
 <head>
 <title>Bootstrap 4 Blog Template For Developers</title>
 
@@ -19,12 +20,17 @@
 
 
 <script
-   src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script> src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
 <link
    href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
    rel="stylesheet" id="bootstrap-css">
 <script
-   src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script>src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 
 <!-- FontAwesome JS-->
@@ -34,12 +40,14 @@
    crossorigin="anonymous"></script>
 
 <!-- Theme CSS -->
-<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+<link id="theme-style" rel="stylesheet" href="assets/css/theme-7.css">
 
 
 
 </head>
-
+	<decorator:head>
+	</decorator:head>
+	
 <body>
    <c:if test="${empty u_id}">
       <header class="header text-center">
@@ -132,22 +140,7 @@
             </div>
             <!--//container-->
          </section>
-         <section class="blog-list px-3 py-5 p-md-5">
-            <div class="container">
-               <decorator:body />
-            </div>
-         </section>
-
-         <footer class="footer text-center py-2 theme-bg-dark">
-
-            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i
-               class="fas fa-heart" style="color: #fb866a;"></i> by <a
-               href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying
-                  Riley</a> for developers
-            </small>
-
-         </footer>
+        
 
       </div>
       <!--//main-wrapper-->
@@ -237,4 +230,19 @@
       }
    </script>
 </body>
+			<section class="blog-list px-3 py-5 p-md-5">
+				<div class="container">
+					<decorator:body />
+				</div>
+			</section>
+
+			<footer class="footer text-center py-2 theme-bg-dark">
+
+				<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+				<small class="copyright">Designed with <i
+					class="fas fa-heart" style="color: #fb866a;"></i> by <a
+					href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying
+						Riley</a> for developers
+				</small>
+			</footer>
 </html>
