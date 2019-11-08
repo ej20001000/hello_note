@@ -3,6 +3,6 @@
 
 	<decorator name="basic-theme" page="layout.jsp">
 		<pattern>/index.do</pattern>
-		<pattern>/*</pattern>
+		<pattern>/basic_*</pattern>
 	</decorator>
 </decorators>
