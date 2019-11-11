@@ -19,12 +19,15 @@
 			이동</a>
 	</div>
 	<aside class="left-side hidden hideNav">
-		<ul class="effects-list">
+	<div class = "effects-list">
+		<ul>
 			<li class="item-divider">자주가는 사이트</li>
 			<li class="item">NAVER</li>
 			<li class="item">DAUM</li>
 			<li class="item">LOL</li>
 			<li class="item">BANK</li>
+
+			
 
 			<li class="item-divider">가끔 가는 사이트</li>
 			<li class="item">YAHOO</li>
@@ -46,7 +49,10 @@
 
 
 		</ul>
+		</div>
 	</aside>
+
+	
 	<aside class="right-side">
 		<div class="text-con">
 			<span class="underline-left">

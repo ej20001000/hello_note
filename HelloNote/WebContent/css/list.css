@@ -24,6 +24,7 @@ body {
 
 ol, ul {
 	list-style: none;
+	
 }
 
 blockquote, q {
@@ -3811,6 +3812,7 @@ main {
 	padding-bottom: 50px;
 	list-style: none
 
+
 	
 }
 
@@ -3902,6 +3904,7 @@ button::-moz-focus-inner {
 	-moz-transition: color 1s ease;
 	-ms-transition: color 1s ease;
 	-o-transition: color 1s ease
+
 }
 
 .animated .bar {
@@ -4050,6 +4053,7 @@ to {
 	margin: 40px 15px;
 	color: #fff;
 	font-size: 2em
+	display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 }
 
 .styles {
@@ -4067,11 +4071,13 @@ to {
 	font-size: 1.4em;
 	line-height: 2em;
 	text-decoration: none
+
 }
 
 .item a:focus, .item a:hover, .item:focus, .item:hover {
 	color: #E8F1F2;
 	transition: color 1s ease
+	
 }
 
 .item-active, .item-active a {
