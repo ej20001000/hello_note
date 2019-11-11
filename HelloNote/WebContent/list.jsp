@@ -9,41 +9,75 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-	$(function() {
-		var siteName = 'google';
+$(function() {
+	var siteName = 'google.com';
 
-		$('#goSite').on('click', function() {
-			window.open('https://www.' + siteName);
-		})
-		
-		$('#naver').on('click', function(){
-			siteName='naver.com';
-		})
-		
-		$('#lol').on('click', function(){
-			siteName='kr.leagueoflegends';
-		})
-		
-		$('#kbstar').on('click', function(){
-			siteName="kbstar.com";
-		})
-		
-		$('#daum').on('click', function(){
-			siteName="daum.net";
-		})
+	$('#goSite').on('click', function() {
+		window.open('https://www.' + siteName);
+	})
+	
+	$('#naver').on('click', function(){
+		siteName='naver.com';
+	})
+	
+	$('#lol').on('click', function(){
+		siteName='kr.leagueoflegends';
+	})
+	
+	$('#kbstar').on('click', function(){
+		siteName="kbstar.com";
+	})
+	
+	$('#daum').on('click', function(){
+		siteName="daum.net";
+	})
 
-		$('#listButton').on('mouseenter', function() {
-			$('li[name=listedItem]').each(function() {
-				$(this).show();
-			})
-		})
-
-		$('#listButton').on('click', function() {
-			$('li[name=listedItem]').each(function() {
-				$(this).hide();
-			})
+	$('#listButton').on('mouseenter', function() {
+		$('li[name=listedItem]').each(function() {
+			$(this).show();
 		})
 	})
+
+	$('#listButton').on('click', function() {
+		$('li[name=listedItem]').each(function() {
+			$(this).hide();
+		})
+	})
+		$('#listButton1').on('mouseenter', function() {
+		$('li[name=listedItem1]').each(function() {
+			$(this).show();
+		})
+	})
+
+	$('#listButton1').on('click', function() {
+		$('li[name=listedItem1]').each(function() {
+			$(this).hide();
+		})
+	})
+		$('#listButton2').on('mouseenter', function() {
+		$('li[name=listedItem2]').each(function() {
+			$(this).show();
+		})
+	})
+
+	$('#listButton2').on('click', function() {
+		$('li[name=listedItem2]').each(function() {
+			$(this).hide();
+		})
+	})
+		$('#listButton3').on('mouseenter', function() {
+		$('li[name=listedItem3]').each(function() {
+			$(this).show();
+		})
+	})
+
+	$('#listButton3').on('click', function() {
+		$('li[name=listedItem3]').each(function() {
+			$(this).hide();
+		})
+	})
+})
+
 </script>
 </head>
 <body>
@@ -69,23 +103,23 @@
 
 
 
-				<li class="item-divider">가끔 가는 사이트</li>
-				<li class="item">YAHOO</li>
-				<li class="item">GOOD</li>
-				<li class="item">SHOP</li>
+				<li class="item-divider" id="listButton1">가끔 가는 사이트</li>
+				<li class="item" name="listedItem1" style="display: none;">YAHOO</li>
+				<li class="item" name="listedItem1" style="display: none;">GOOD</li>
+				<li class="item" name="listedItem1" style="display: none;">SHOP</li>
 
 
-				<li class="item-divider">중요한 아이디</li>
-				<li class="item">1</li>
-				<li class="item">2</li>
-				<li class="item">3</li>
-				<li class="item">4</li>
+				<li class="item-divider" id="listButton2">중요한 아이디</li>
+				<li class="item" name="listedItem2" style="display: none;">1</li>
+				<li class="item" name="listedItem2" style="display: none;">2</li>
+				<li class="item" name="listedItem2" style="display: none;">3</li>
+				<li class="item" name="listedItem2" style="display: none;">4</li>
 
-				<li class="item-divider">안 중요한 아이디</li>
-				<li class="item">1</li>
-				<li class="item">2</li>
-				<li class="item">3</li>
-				<li class="item">4</li>
+				<li class="item-divider" id="listButton3">안 중요한 아이디</li>
+				<li class="item" name="listedItem3" style="display: none;">1</li>
+				<li class="item" name="listedItem3" style="display: none;">2</li>
+				<li class="item" name="listedItem3" style="display: none;">3</li>
+				<li class="item" name="listedItem3" style="display: none;">4</li>
 
 
 			</ul>
