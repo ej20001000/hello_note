@@ -11,6 +11,10 @@
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=480ceff9c2681fcc01d860ea5612d68e&libraries=services"></script>
 <script>
@@ -27,6 +31,9 @@
 		// 주소 변수 미리 선언
 		var address;
 
+		$( "#memoul" ).sortable();
+	    $( "#memoul" ).disableSelection();
+		
 		// 메모 클릭 시 팝업 모달 표시
 		$('#memoul')
 				.on(
@@ -109,19 +116,30 @@
 							console.log(document.getElementById('map'));
 							console.log($container);
 							var map = new kakao.maps.Map($container[0], options);
+							$('#addLocation').after(
+									'<span id="locationName"></span>');
+							kakao.maps.event
+									.addListener(
+											map,
+											'click',
+											function(mouseEvent) {
+												var clickXy = mouseEvent.latLng;
+												var coord = new kakao.maps.LatLng(
+														clickXy.Ha, clickXy.Ga);
+												var callback = function(result,
+														status) {
+													if (status === kakao.maps.services.Status.OK) {
+														address = result[0].address.address_name;
+														$('#locationName')
+																.text(address);
 
-							kakao.maps.event.addListener(map, 'click',
-									function(mouseEvent) {
-										var clickXy = mouseEvent.latLng;
-										var coord = new kakao.maps.LatLng(clickXy.Ha, clickXy.Ga);
-										var callback = function(result, status) {
-										    if (status === kakao.maps.services.Status.OK) {
-										        console.log(result[0].address.address_name);
-										    }
-										};
+													}
+												};
 
-										geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-									});
+												geocoder.coord2Address(coord
+														.getLng(), coord
+														.getLat(), callback);
+											});
 
 						})
 
@@ -210,7 +228,9 @@
 
 		</a></li>
 	</ul>
-	<li class="icon"><i class="fas fa-plus-circle fa-4x" id="add"></i></li>
+	<div align="center">
+		<a class="addButton" id="add">메모 추가</a>
+	</div>
 	<div class="modal" id="myModal" style="z-index: 6;">
 		<div class="modal-content" id="modal-content">
 			<span class="close" id="modalClose"
