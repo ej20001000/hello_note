@@ -76,17 +76,30 @@ $(function() {
 	$('#daum').on('click', function(){
 		siteName="daum.net";
 	})
-
-	$('#listButton').on('mouseenter', function() {
-		$('li[name=listedItem]').each(function() {
-			$(this).slideDown();
-		})
+	var temp1 = 1;
+	var temp2 = 1;
+	$('#listButton').on('click', function() {
+		console.log(temp1);
+		if(temp1 == 1){
+			$('li[name=listedItem]').each(function() {
+				$(this).slideDown();				
+				
+			})
+			temp1 = 0;			
+		}
 	})
 
 	$('#listButton').on('click', function() {
-		$('li[name=listedItem]').each(function() {
-			$(this).slideUp();
-		})
+		console.log(temp1);
+		if(temp2 == 1){
+			if(temp1 == 0){
+				$('li[name=listedItem]').each(function() {
+					$(this).slideUp();
+				})				
+			}	
+			
+			temp1 = 1;
+		}
 	})
 		$('#listButton1').on('mouseenter', function() {
 		$('li[name=listedItem1]').each(function() {
