@@ -100,37 +100,40 @@ $(function() {
 			})
 		}
 	})
-	$('#listButton1').on('mouseenter', function() {
-		$('li[name=listedItem1]').each(function() {
-			$(this).slideDown();
-		})
-	})
-
 	$('#listButton1').on('click', function() {
-		$('li[name=listedItem1]').each(function() {
-			$(this).slideUp();
-		})
-	})
-	$('#listButton2').on('mouseenter', function() {
-		$('li[name=listedItem2]').each(function() {
-			$(this).slideDown();
-		})
-	})
 
+		if ($('li[name=listedItem1]').css('display') == 'none') {
+			$('li[name=listedItem1]').each(function() {
+				$(this).slideDown();
+			})
+		} else {
+			$('li[name=listedItem1]').each(function() {
+				$(this).slideUp();
+			})
+		}
+	})
 	$('#listButton2').on('click', function() {
-		$('li[name=listedItem2]').each(function() {
-			$(this).slideUp();
-		})
-	})
-	$('#listButton3').on('mouseenter', function() {
-		$('li[name=listedItem3]').each(function() {
-			$(this).slideDown();
-		})
-	})
 
+		if ($('li[name=listedItem2]').css('display') == 'none') {
+			$('li[name=listedItem2]').each(function() {
+				$(this).slideDown();
+			})
+		} else {
+			$('li[name=listedItem2]').each(function() {
+				$(this).slideUp();
+			})
+		}
+	})
 	$('#listButton3').on('click', function() {
-		$('li[name=listedItem3]').each(function() {
-			$(this).slideUp();
-		})
+
+		if ($('li[name=listedItem3]').css('display') == 'none') {
+			$('li[name=listedItem3]').each(function() {
+				$(this).slideDown();
+			})
+		} else {
+			$('li[name=listedItem3]').each(function() {
+				$(this).slideUp();
+			})
+		}
 	})
 });
