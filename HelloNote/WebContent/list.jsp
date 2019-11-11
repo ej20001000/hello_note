@@ -3,82 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/list.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(function() {
-	var siteName = 'google.com';
+<link rel="stylesheet" href="css/list2.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-	$('#goSite').on('click', function() {
-		window.open('https://www.' + siteName);
-	})
+	<script>
 	
-	$('#naver').on('click', function(){
-		siteName='naver.com';
-	})
-	
-	$('#lol').on('click', function(){
-		siteName='kr.leagueoflegends';
-	})
-	
-	$('#kbstar').on('click', function(){
-		siteName="kbstar.com";
-	})
-	
-	$('#daum').on('click', function(){
-		siteName="daum.net";
-	})
-
-	$('#listButton').on('mouseenter', function() {
-		$('li[name=listedItem]').each(function() {
-			$(this).show();
-		})
-	})
-
-	$('#listButton').on('click', function() {
-		$('li[name=listedItem]').each(function() {
-			$(this).hide();
-		})
-	})
-		$('#listButton1').on('mouseenter', function() {
-		$('li[name=listedItem1]').each(function() {
-			$(this).show();
-		})
-	})
-
-	$('#listButton1').on('click', function() {
-		$('li[name=listedItem1]').each(function() {
-			$(this).hide();
-		})
-	})
-		$('#listButton2').on('mouseenter', function() {
-		$('li[name=listedItem2]').each(function() {
-			$(this).show();
-		})
-	})
-
-	$('#listButton2').on('click', function() {
-		$('li[name=listedItem2]').each(function() {
-			$(this).hide();
-		})
-	})
-		$('#listButton3').on('mouseenter', function() {
-		$('li[name=listedItem3]').each(function() {
-			$(this).show();
-		})
-	})
-
-	$('#listButton3').on('click', function() {
-		$('li[name=listedItem3]').each(function() {
-			$(this).hide();
-		})
-	})
-})
-
-</script>
+	</script>
 </head>
 <body>
 	<button class="btn-nav">
@@ -167,6 +100,6 @@ $(function() {
 		class="fa fa-user"></i></a>
 
 
-	<script src="js/list.js"></script>
 </body>
+	<script src="js/list2.js"></script>
 </html>
