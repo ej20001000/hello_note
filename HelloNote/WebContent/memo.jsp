@@ -31,9 +31,9 @@
 		// 주소 변수 미리 선언
 		var address;
 
-		$( "#memoul" ).sortable();
-	    $( "#memoul" ).disableSelection();
-		
+		$("#memoul").sortable();
+		$("#memoul").disableSelection();
+
 		// 메모 클릭 시 팝업 모달 표시
 		$('#memoul')
 				.on(
