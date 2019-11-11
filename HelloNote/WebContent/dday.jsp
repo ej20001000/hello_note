@@ -99,6 +99,7 @@
 	})
 </script>
 </head>
+
 <body>
 	<div id="mainContainer" align="center">
 	기념일 이름 클릭 시 편집/날짜 클릭 시 삭제

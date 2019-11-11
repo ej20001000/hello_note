@@ -67,6 +67,13 @@
             var option = "width = 500, height = 500, top = 100, left = 200, location = no"
             window.open(url, name, option);
         }
+
+		$(function(){
+    		$('#close').on('click', function(){
+    			$('#myModal').hide();
+    		})
+    		
+    	})
     </script>
 
 <body>
@@ -85,7 +92,7 @@
 				<td align="center">bs930702</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="idmenu.jsp" class="btn btn-md btn-default">상세정보</a></td>
+				<td align="center"><a id="specification" class="btn btn-md btn-default">상세정보</a></td>
 				<td align="center"><a href="#" class="btn btn-md btn-default">메뉴열기</a></td>
 			</tr>
 		</table>
@@ -127,7 +134,7 @@
 			</tr>
 			<tr>
 				<td align="center"><a href="idmenu.jsp" class="btn btn-md btn-default">수정</a></td>
-				<td align="center"><a onclick="self.close();" class="btn btn-md btn-default">닫기</a></td>
+				<td align="center"><a id="close" class="btn btn-md btn-default">닫기</a></td>
 			</tr>
 		</table>
 	</div>
