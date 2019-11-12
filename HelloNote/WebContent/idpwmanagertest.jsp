@@ -105,11 +105,7 @@
 				<td align="center">네이버</td>
 				<td align="center">bs930702</td>
 			</tr>
-			<tr>
-				<td align="center"><a id="specification" class="btn btn-md btn-default">상세정보</a></td>
-				<td align="center"><a href="#" class="btn btn-md btn-default">메뉴열기</a></td>
-			</tr>
-		</table>
+			
 	</div>
 <div class="modal" id="myModal">
       <div class="modal-content" id="modal-content">
