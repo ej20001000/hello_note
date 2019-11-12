@@ -21,16 +21,17 @@
 
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-	src = "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-</script>
+<link rel="stylesheet"
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
-	src = "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" >
+	src = "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 </script>
 
 
@@ -42,7 +43,8 @@
 	crossorigin="anonymous"></script>
 
 <!-- Theme CSS -->
-<link id="theme-style" rel="stylesheet" href="assets/css/main/theme-7.css">
+<link id="theme-style" rel="stylesheet"
+	href="assets/css/main/theme-7.css">
 
 
 
@@ -96,7 +98,7 @@
 					</div>
 					<!--//profile-section-->
 
-					<ul class="navbar-nav flex-column text-left">
+					<ul id="myMenu" class="navbar-nav flex-column text-left">
 						<li class="nav-item active"><a class="nav-link"
 							href="index.html"><i class="fas fa-home fa-fw mr-2"></i>홈<span
 								class="sr-only">(current)</span></a></li>
@@ -183,7 +185,6 @@
 
 
 		<!-- Javascript -->
-		<script src="assets/plugins/jquery-3.3.1.min.js"></script>
 		<script src="assets/plugins/popper.min.js"></script>
 		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
@@ -228,6 +229,26 @@
 							'popUpWindow',
 							'height=700,width=600,left=300,top=300,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
 		}
+
+		$(function() {
+			$('#myMenu').sortable(
+					{
+						start : function(e, ui) {
+							// creates a temporary attribute on the element with the old index
+							$(this).attr('data-previndex', ui.item.index());
+						},
+						update : function(e, ui) {
+							// gets the new and old index then removes the temporary attribute
+							var newIndex = ui.item.index();
+							var oldIndex = $(this).attr('data-previndex');
+							var element_id = ui.item.attr('id');
+							console.log('id of Item moved = ' + element_id
+									+ ' old position = ' + oldIndex
+									+ ' new position = ' + newIndex);
+							$(this).removeAttr('data-previndex');
+						}
+					});
+		})
 	</script>
 </body>
 <section class="blog-list px-3 py-5 p-md-5">

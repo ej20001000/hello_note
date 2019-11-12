@@ -59,6 +59,7 @@
 						'li a',
 						function() {
 							// 모달 팝업 안의 내용들이 존재 하면 다 지운다.
+							$('#modalLocation').remove();
 							$('#modal-title').remove();
 							$('#modal-text').remove();
 							$('#title-edit').remove();
@@ -70,25 +71,33 @@
 							$('#map').remove();
 							// 팝업 표시
 							modal.show();
-							// 메모 안의 내용 불러옴(변수로 지정)
-							var $memos = $(this).text().trim().split(',');
+							a = $(this).attr('id').replace(/memo/, '');
+
+							console.log($('#location' + a).text());
+
 							// 팝업에 메모 내용 append
 							$('#modal-content')
 									.append(
 											'<div style="width: 100%; margin-top: 20px;" id="modal-title" class="modal-title">'
-													+ $memos[0] + '</div>');
+													+ $('#title' + a).text()
+													+ '</div>');
 							$('#modal-content')
 									.append(
 											'<div style="width: 100%; margin-top: 20px;" id="modal-text" class="modal-text">'
-													+ $memos[1].trim()
+													+ $('#text' + a).text()
 													+ '</div>');
+							$('#modal-content')
+									.append(
+											'<div style="width: 100%; margin-top: 20px;" id="modalLocation" class="modalLocation">'
+													+ $('#location' + a).text()
+													+ '</div>');
+
 							$('#modal-content')
 									.prepend(
 											'<button id="delete" style="margin-left: 5px;">삭제</button>');
 							$('#modal-content').prepend(
 									'<button id="edit">편집</button>');
 							$('#modal-content').focus();
-							a = $(this).attr('id').replace(/memo/, '');
 
 							$('#modal-content').focus();
 						});
@@ -101,16 +110,16 @@
 							var $modalContent = $(this).parent();
 							$('#modal-title').hide();
 							$('#modal-text').hide();
-							$modalContent
-									.append('<textarea rows="1" style="width: 100%" id="title-edit">'
+							$('#modalLocation')
+									.before('<textarea rows="1" style="width: 100%" id="title-edit">'
 											+ $('#modal-title').text()
 											+ '</textarea>');
-							$modalContent
-									.append('<textarea rows="12" style="width: 100%" id="text-edit">'
+							$('#modalLocation')
+									.before('<textarea rows="12" style="width: 100%" id="text-edit">'
 											+ $('#modal-text').text()
 											+ '</textarea>');
 							$modalContent
-									.append('<button id="addLocation">장소추가</button>');
+									.append('<button id="addLocation">위치</button>');
 							$('#edit').html('완료');
 							$('#edit').attr('id', 'edit-done');
 						});
@@ -134,8 +143,6 @@
 							console.log(document.getElementById('map'));
 							console.log($container);
 							var map = new kakao.maps.Map($container[0], options);
-							$('#addLocation').after(
-									'<span id="modalLocation"></span>');
 							kakao.maps.event
 									.addListener(
 											map,
@@ -158,7 +165,7 @@
 														.getLng(), coord
 														.getLat(), callback);
 											});
-														$('#addLocation').hide();
+							$('#addLocation').hide();
 						});
 
 		// 삭제
@@ -197,8 +204,9 @@
 					$('#edit-done').attr('id', 'edit');
 
 					// 메모 안의 내용 변경
-					$('#title' + a).text($titleEdit + ',');
+					$('#title' + a).text($titleEdit);
 					$('#text' + a).text($textEdit);
+					$('#location' + a).text($('#modalLocation').text());
 				});
 
 		// x 누를 시 팝업 제거
@@ -215,8 +223,9 @@
 									.append(
 											'<li class="memoli" id="memoli'+i+'"><a id="memo'+i
 											+'" class="memo"><div class="title-box"><h3 id="title'+i
-											+'" class="title">Title,</h3></div><div class="text-box"><p id="text'+i
-											+'" class="text">Text</p></div></a></li>');
+											+'" class="title">Title</h3></div><div class="text-box"><p id="text'+i
+											+'" class="text">Text</p></div><div class="location-box"><p id="location'+i
+											+'" class="text"></p></div></a></li>');
 							i = i + 1;
 						});
 
@@ -238,7 +247,7 @@
 	<ul class="memoul" id="memoul">
 		<li class="memoli" id="memoli"><a id="memo" class="memo">
 				<div class="title-box">
-					<h3 id="title" class="title">Title,</h3>
+					<h3 id="title" class="title">Title</h3>
 				</div>
 				<div class="text-box">
 					<p id="text" class="text">Text</p>
