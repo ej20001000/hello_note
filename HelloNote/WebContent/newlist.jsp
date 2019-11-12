@@ -21,6 +21,7 @@
    overflow: auto; /* Enable scroll if needed */
    background-color: rgb(0, 0, 0); /* Fallback color */
    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+   z-index: 6;
 }
 
 /* Modal Content/Box */
@@ -62,7 +63,8 @@
         }
 
 		$(function(){
-    		$('#close').on('click', function(){
+			console.log($('.close').children().eq(0));
+    		$('.close').on('click', function(){
     			$('#myModal').hide();
     		})
     		
@@ -87,7 +89,9 @@
               <input type="checkbox" id="chk1">
               <label for="chk1" class="toggle"></label>
             </div>
-            <p class="title">네이버</p><span class="star-toggle glyphicon glyphicon-star-empty"></span>
+            <div class="subject" style="left-margin: 10%">
+             	네이버1<span class="star-toggle glyphicon glyphicon-star-empty"></span>
+            </div>
           </div>
           <div class="col col-2">
             <div class="subject">ID/PW<span class="teaser"></span></div>

@@ -90,7 +90,7 @@
 /* Modal Content/Box */
 .modal-content {
 	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
+	margin: 5% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
 	width: 50%; /* Could be more or less, depending on screen size */
@@ -121,14 +121,25 @@
 	-webkit-box-orient: vertical;
 }
 
-.text-box {
+.location-box {
 	display: -webkit-box;
 	width: 100%;
-	height: 140px;
+	height: 20px;
 	line-height: 20px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	-webkit-line-clamp: 7;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.text-box {
+	display: -webkit-box;
+	width: 100%;
+	height: 120px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 6;
 	-webkit-box-orient: vertical;
 }
 

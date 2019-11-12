@@ -31,7 +31,25 @@
 		// 주소 변수 미리 선언
 		var address;
 
-		$("#memoul").sortable();
+		// 순서 변경 함수
+		$("#memoul").sortable(
+				{
+					start : function(e, ui) {
+						// creates a temporary attribute on the element with the old index
+						$(this).attr('data-previndex', ui.item.index());
+					},
+					update : function(e, ui) {
+						// gets the new and old index then removes the temporary attribute
+						var newIndex = ui.item.index();
+						var oldIndex = $(this).attr('data-previndex');
+						var element_id = ui.item.attr('id');
+						console.log('id of Item moved = ' + element_id
+								+ ' old position = ' + oldIndex
+								+ ' new position = ' + newIndex);
+						$(this).removeAttr('data-previndex');
+					}
+				});
+
 		$("#memoul").disableSelection();
 
 		// 메모 클릭 시 팝업 모달 표시
@@ -117,7 +135,7 @@
 							console.log($container);
 							var map = new kakao.maps.Map($container[0], options);
 							$('#addLocation').after(
-									'<span id="locationName"></span>');
+									'<span id="modalLocation"></span>');
 							kakao.maps.event
 									.addListener(
 											map,
@@ -130,7 +148,7 @@
 														status) {
 													if (status === kakao.maps.services.Status.OK) {
 														address = result[0].address.address_name;
-														$('#locationName')
+														$('#modalLocation')
 																.text(address);
 
 													}
@@ -140,8 +158,8 @@
 														.getLng(), coord
 														.getLat(), callback);
 											});
-
-						})
+														$('#addLocation').hide();
+						});
 
 		// 삭제
 		$('#modal-content').on('click', '#delete', function() {
@@ -195,7 +213,7 @@
 						function() {
 							$('#memoul')
 									.append(
-											'<li class="memoli"><a id="memo'+i
+											'<li class="memoli" id="memoli'+i+'"><a id="memo'+i
 											+'" class="memo"><div class="title-box"><h3 id="title'+i
 											+'" class="title">Title,</h3></div><div class="text-box"><p id="text'+i
 											+'" class="text">Text</p></div></a></li>');
@@ -218,12 +236,15 @@
 </head>
 <body>
 	<ul class="memoul" id="memoul">
-		<li class="memoli"><a id="memo" class="memo">
+		<li class="memoli" id="memoli"><a id="memo" class="memo">
 				<div class="title-box">
 					<h3 id="title" class="title">Title,</h3>
 				</div>
 				<div class="text-box">
 					<p id="text" class="text">Text</p>
+				</div>
+				<div class="location-box">
+					<p id="location" class="text"></p>
 				</div>
 
 		</a></li>
