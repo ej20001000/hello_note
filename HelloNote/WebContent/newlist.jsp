@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/newlist.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/newlist.js"></script>
 </head>
 <body>
 <aside id="sidebar" class="nano">
@@ -468,6 +469,5 @@
     </div>
   </div>
 </div>
-	<script src="js/newlist.js"></script>
 </body>
 </html>
