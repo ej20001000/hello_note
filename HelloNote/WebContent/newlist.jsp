@@ -79,7 +79,7 @@
 					</div>
 				</li>
 				</ul>
-				<div>
+				<div align="center">
 					<button class="button button-block" id="specification"
 						type="button">추가</button>
 					<button class="button button-block" id="no"
@@ -193,7 +193,7 @@
             <input type="password"required autocomplete="off"/>
           </div>
           
-          <button class="button button-block">Add</button>
+          <button class="button button-block" style="width: 30% !important;">Add</button>
           
           </form>
 

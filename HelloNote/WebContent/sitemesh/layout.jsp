@@ -34,8 +34,6 @@
 	src = "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 </script>
 
-
-
 <!-- FontAwesome JS-->
 <script defer
 	src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
@@ -46,7 +44,46 @@
 <link id="theme-style" rel="stylesheet"
 	href="assets/css/main/theme-7.css">
 
+<link rel="stylesheet" href="assets/css/main/button.css">
+<link rel='stylesheet' type='text/css' href='assets/css/radiobox.css'>
 
+<style>/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */
+	word-break: break-all; /* 단어가 길면 줄바꿈 처리 */
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+</style>
 
 </head>
 <decorator:head>
@@ -118,7 +155,7 @@
 					</ul>
 
 					<div class="my-2 my-md-3">
-						<button id="addMenu" class="btn btn-primary" onclick="addMenu()">+</button>
+						<button id="addMenu" class="btn btn-primary">+</button>
 					</div>
 				</div>
 			</nav>
@@ -248,6 +285,12 @@
 							$(this).removeAttr('data-previndex');
 						}
 					});
+			$('#addMenu').on('click', function() {
+				$('#myModal').show();
+			});
+			$('#modalClose').on('click', function() {
+				$('#myModal').hide();
+			})
 		})
 	</script>
 </body>
@@ -257,6 +300,44 @@
 	</div>
 </section>
 
+<div class="modal" id="myModal" style="z-index: 6;">
+	<div class="modal-content" id="modal-content">
+		<span class="close" id="modalClose" style="float: right; width: 30px;">&times;</span>
+		<br>
+		<div>
+			<input type="text" id="menuName" name="menuName"
+				placeholder="Menu Name">
+			<div class="funkyradio">
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio1" checked /> <label
+						for="radio1">사이트 관리</label>
+				</div>
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio2" /> <label
+						for="radio2">체크 리스트</label>
+				</div>
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio3" /> <label
+						for="radio3">기념일 관리</label>
+				</div>
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio4" /> <label
+						for="radio4">메모 관리</label>
+				</div>
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio5" /> <label
+						for="radio5">내 계좌 번호 관리</label>
+				</div>
+				<div class="funkyradio-primary">
+					<input type="radio" name="radio" id="radio6" /> <label
+						for="radio6">캘린더</label>
+				</div>
+			</div>
+			<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="submit" class="button">생성</button>
+		</div>
+	</div>
+</div>
 <footer class="footer text-center py-2 theme-bg-dark">
 
 	<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->

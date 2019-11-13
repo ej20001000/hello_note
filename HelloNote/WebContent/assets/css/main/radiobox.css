@@ -85,6 +85,10 @@
   background-color: #337ab7;
 }
 
+.funkyradio-primary {
+	white-space: nowrap;
+}
+
 .funkyradio-success input[type="radio"]:checked ~ label:before,
 .funkyradio-success input[type="checkbox"]:checked ~ label:before {
   color: #fff;
