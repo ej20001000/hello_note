@@ -10,26 +10,26 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/newlist.js"></script>
 <script>
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
- 
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
- 
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
-    }
-    </script>
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+</script>
 
 </head>
 <body>
 	<main id="main">
-	 <div class="overlay"></div>
-	 <header class="header">
+	<div class="overlay"></div>
+	<header class="header">
 		<div class="search-box">
 			<input placeholder="Search..."><span
 				class="icon glyphicon glyphicon-search"></span>
@@ -78,16 +78,14 @@
 						<div class="date">12:34 pm</div>
 					</div>
 				</li>
-				</ul>
-				<div align="center">
-					<button class="button button-block" id="specification"
-						type="button">추가</button>
-					<button class="button button-block" id="no"
-						type="button">삭제</button>
-				</div>
-				
+			</ul>
+			<div align="center">
+				<button class="button button-block" id="specification" type="button">Add</button>
+				<button class="button button-block" id="no" type="button">Delete</button>
+			</div>
 
-			
+
+
 			<a href="#" class="load-more-link">Show more Site List</a>
 		</div>
 	</div>
@@ -95,8 +93,9 @@
 	<div id="message" ondrop="drop(event)">
 		<div class="header">
 			<h1 class="page-title">
-				<a class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></a><a>ID/PW
-				상세보기</a><span class="grey">(2)</span>
+				<a
+					class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></a><a>ID/PW
+					상세보기</a><span class="grey">(2)</span>
 			</h1>
 			<p>
 				Site <a href="#">NAVER</a>
@@ -116,7 +115,8 @@
 							<p>| ID : bs930702</p>
 							<p>| PW : 1234</p>
 							<p>| MEMO : 누구누구아이디</p>
-							<button class="button button-block">SITE 이동</button>
+							<button class="button button-block"
+								style="width: 30% !important;">SITE 이동</button>
 						</div>
 						<div class="tool-box">
 							<a href="#"
@@ -136,7 +136,8 @@
 							<p>| ID : bs930702</p>
 							<p>| PW : 1234</p>
 							<p>| MEMO : 누구누구아이디</p>
-							<button class="button button-block">SITE 이동</button>
+							<button class="button button-block"
+								style="width: 30% !important;">SITE 이동</button>
 						</div>
 						<div class="tool-box">
 							<a href="#"
@@ -154,73 +155,49 @@
 			<div align="center">
 				<div class="container">
 					<div class="form">
-      
-    
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Add Site</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                ID or Email<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Password<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
+						<div class="tab-content">
+							<div id="signup">
+								<h1>Add Site</h1>
+								<form action="/" method="post">
+									<div class="top-row">
+										<div class="field-wrap">
+											<label> ID or Email<span class="req">*</span>
+											</label> <input type="text" required autocomplete="off" />
+										</div>
 
-          <div class="field-wrap">
-            <label>
-              Memo<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button class="button button-block" style="width: 30% !important;">Add</button>
-          
-          </form>
+										<div class="field-wrap">
+											<label> Password<span class="req">*</span>
+											</label> <input type="text" required autocomplete="off" />
+										</div>
+									</div>
+									<div class="field-wrap">
+										<label> Name<span class="req">*</span>
+										</label> <input type="password" required autocomplete="off" />
+									</div>
 
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>          
-          </form>
-        </div>
-      </div><!-- tab-content -->
-</div> <!-- /form -->
+									<div class="field-wrap">
+										<label> Memo<span class="req">*</span>
+										</label> <input type="email" required autocomplete="off" />
+										<textarea></textarea>
+									</div>
+
+
+									<button class="button button-block"
+										style="width: 30% !important;">Add</button>
+
+								</form>
+
+							</div>
+
+
+
+
+							<form action="/" method="post"></form>
+							
+						</div>
+						<!-- tab-content -->
+					</div>
+					<!-- /form -->
 				</div>
 			</div>
 		</div>
