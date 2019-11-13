@@ -9,9 +9,27 @@
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/newlist.js"></script>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+ 
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+ 
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+
 </head>
 <body>
-	<main id="main"> <header class="header">
+	<main id="main">
+	 <div class="overlay"></div>
+	 <header class="header">
 		<div class="search-box">
 			<input placeholder="Search..."><span
 				class="icon glyphicon glyphicon-search"></span>
@@ -60,24 +78,25 @@
 						<div class="date">12:34 pm</div>
 					</div>
 				</li>
-				<div style="text-align: center;">
-
-					<button class="btn btn-primary btn-block" id="specification"
-						type="button">modal 테스트</button>
-
+				</ul>
+				<div>
+					<button class="button button-block" id="specification"
+						type="button">추가</button>
+					<button class="button button-block" id="no"
+						type="button">삭제</button>
 				</div>
+				
 
-			</ul>
+			
 			<a href="#" class="load-more-link">Show more Site List</a>
 		</div>
 	</div>
 	</main>
-	<div id="message">
+	<div id="message" ondrop="drop(event)">
 		<div class="header">
 			<h1 class="page-title">
-				<a
-					class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></a>ID/PW
-				상세보기<span class="grey">(2)</span>
+				<a class="icon circle-icon glyphicon glyphicon-chevron-left trigger-message-close"></a><a>ID/PW
+				상세보기</a><span class="grey">(2)</span>
 			</h1>
 			<p>
 				Site <a href="#">NAVER</a>
@@ -97,7 +116,7 @@
 							<p>| ID : bs930702</p>
 							<p>| PW : 1234</p>
 							<p>| MEMO : 누구누구아이디</p>
-							<button>SITE 이동</button>
+							<button class="button button-block">SITE 이동</button>
 						</div>
 						<div class="tool-box">
 							<a href="#"
@@ -107,7 +126,7 @@
 						</div>
 					</li>
 					<li class="received">
-						<div class="details">
+						<div class="details" ondrop="drop(event)">
 							<div class="left">NAVER</div>
 							<div class="right">
 								<div class="date">12:34 pm</div>
@@ -117,7 +136,7 @@
 							<p>| ID : bs930702</p>
 							<p>| PW : 1234</p>
 							<p>| MEMO : 누구누구아이디</p>
-							<button>SITE 이동</button>
+							<button class="button button-block">SITE 이동</button>
 						</div>
 						<div class="tool-box">
 							<a href="#"
@@ -134,60 +153,74 @@
 			<span class="close">&times;</span>
 			<div align="center">
 				<div class="container">
-					<section>
-						<div class="page-header">
-							<h1 align="center">Site Add</h1>
-						</div>
+					<div class="form">
+      
+    
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Add Site</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                ID or Email<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Password<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
 
-						<form action="/" method="post" id="contractor_form"
-							name="contractor_form" class="form-horizontal" autocomplete="off"
-							data-init="validate" data-messages='{"required":"En Blanco"}'>
-							<div class="control-group">
-								<label class="control-label" for="contractor_id">Site
-									Name</label>
-								<div class="controls">
-									<input type="text" placeholder="12345" id="contractor_id"
-										name="contractor_id" data-required data-integerpositive />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="contractor_email">Email/ID</label>
-								<div class="controls">
-									<input type="text" placeholder="john.smith@example.com"
-										id="contractor_email" name="contractor_email" data-required
-										data-email />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="contractor_username">Password</label>
-								<div class="controls">
-									<input type="text" placeholder="Username"
-										id="contractor_username" name="contractor_username"
-										data-required data-minlength="5" data-maxlength="100" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="contractor_password">Memo</label>
-								<div class="controls">
-									<textarea></textarea>
-									>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="contractor_retype_password">Importance</label>
-								<div class="controls">
-									<input type='checkbox' name='gender' value='female' />중요 <input
-										type='checkbox' name='gender' value='male' />안중요
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls">
-									<button type="submit" class="btn">Submit</button>
-									<button type="reset" class="btn">Reset</button>
-								</div>
-							</div>
-						</form>
-					</section>
+          <div class="field-wrap">
+            <label>
+              Memo<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button class="button button-block">Add</button>
+          
+          </form>
+
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>          
+          </form>
+        </div>
+      </div><!-- tab-content -->
+</div> <!-- /form -->
 				</div>
 			</div>
 		</div>
