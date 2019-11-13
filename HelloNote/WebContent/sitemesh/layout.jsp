@@ -64,11 +64,24 @@
 /* Modal Content/Box */
 .modal-content {
 	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
+	margin: 10% auto; /* 15% from the top and centered */
+	padding: 3%;
+	width: 20%;
 	border: 1px solid #888;
-	width: 50%; /* Could be more or less, depending on screen size */
 	word-break: break-all; /* 단어가 길면 줄바꿈 처리 */
+}
+
+/* 화면 크기에 따라 모달 창 width 조정 */
+@media (max-width: 1100px) {
+	.modal-content{
+		width: 30%;
+	}
+}
+
+@media (max-width: 700px){
+	.modal-content{
+		width: 60%;
+	}
 }
 /* The Close Button */
 .close {
@@ -290,8 +303,11 @@
 			});
 			$('#modalClose').on('click', function() {
 				$('#myModal').hide();
-			})
+			});
+			
 		})
+		
+		
 	</script>
 </body>
 <section class="blog-list px-3 py-5 p-md-5">
@@ -306,7 +322,7 @@
 		<br>
 		<div>
 			<input type="text" id="menuName" name="menuName"
-				placeholder="Menu Name">
+				placeholder="Menu Name" style="width: 100%; margin-bottom: 10px;">
 			<div class="funkyradio">
 				<div class="funkyradio-primary">
 					<input type="radio" name="radio" id="radio1" checked /> <label
