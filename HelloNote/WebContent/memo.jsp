@@ -17,6 +17,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=480ceff9c2681fcc01d860ea5612d68e&libraries=services"></script>
+<script src="assets/js/ui/jquery.ui.touch-punch.min.js"></script>
 <script>
 	$(function() {
 		var modal = $('#myModal');
@@ -110,12 +111,12 @@
 							var $modalContent = $(this).parent();
 							$('#modal-title').hide();
 							$('#modal-text').hide();
-							$('#modalLocation')
-									.before('<textarea rows="1" style="width: 100%" id="title-edit">'
+							$('#modalLocation').before(
+									'<textarea rows="1" style="width: 100%" id="title-edit">'
 											+ $('#modal-title').text()
 											+ '</textarea>');
-							$('#modalLocation')
-									.before('<textarea rows="12" style="width: 100%" id="text-edit">'
+							$('#modalLocation').before(
+									'<textarea rows="12" style="width: 100%" id="text-edit">'
 											+ $('#modal-text').text()
 											+ '</textarea>');
 							$modalContent
