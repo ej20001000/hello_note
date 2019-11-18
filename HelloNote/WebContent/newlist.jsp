@@ -9,22 +9,6 @@
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/newlist.js"></script>
-<script>
-	function allowDrop(ev) {
-		ev.preventDefault();
-	}
-
-	function drag(ev) {
-		ev.dataTransfer.setData("text", ev.target.id);
-	}
-
-	function drop(ev) {
-		ev.preventDefault();
-		var data = ev.dataTransfer.getData("text");
-		ev.target.appendChild(document.getElementById(data));
-	}
-</script>
-
 </head>
 <body>
 	<main id="main">
@@ -174,10 +158,8 @@
 										<label> Name<span class="req">*</span>
 										</label> <input type="password" required autocomplete="off" />
 									</div>
-
+									<div class ="field-wrap"><label> Memo<span class="req">*</span></label></div>
 									<div class="field-wrap">
-										<label> Memo<span class="req">*</span>
-										</label> <input type="email" required autocomplete="off" />
 										<textarea></textarea>
 									</div>
 

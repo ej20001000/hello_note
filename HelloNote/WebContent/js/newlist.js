@@ -1,4 +1,7 @@
-    	$(function(){
+    	
+
+// 모달창 스크립트
+	$(function(){
     		$('#specification').on('click', function(){
     			$('#myModal').show();
     		})
@@ -53,7 +56,7 @@ jQuery(document).ready(function($) {
 	};
 
 
-	// Show sidebar when trigger is clicked
+	// 트리거 클릭 시 사이드바 표시
 
 	$('.trigger-toggle-sidebar').on('click', function() {
 		cols.showSidebar();
@@ -67,7 +70,7 @@ jQuery(document).ready(function($) {
 	});
 
 
-	// When you click on a message, show it
+	// 메시지를 클릭할 때 표시
 
 	$('#main .message-list li').on('click', function(e) {
 		var item = $(this),
@@ -96,7 +99,7 @@ jQuery(document).ready(function($) {
 	});
 
 
-	// This will prevent click from triggering twice when clicking checkbox/label
+	// 이렇게 하면 확인란/라벨을 클릭할 때 클릭이 두 번 트리거되지 않음
 
 	$('input[type=checkbox]').on('click', function(e) {
 		e.stopImmediatePropagation();
@@ -104,7 +107,7 @@ jQuery(document).ready(function($) {
 
 
 
-	// When you click the overlay, close everything
+	// 중첩을 클릭하면 모든 항목을 닫으십시오.
 
 	$('#main > .overlay').on('click', function() {
 		cols.hideOverlay();
@@ -114,12 +117,12 @@ jQuery(document).ready(function($) {
 
 
 
-	// Enable sexy scrollbars
+	// Enable sexy scrollbars 섹시한 스크롤 막대 사용?
 	$('.nano').nanoScroller();
 
 
 
-	// Disable links
+	// 링크 사용 안 함
 
 	$('a').on('click', function(e) {
 		e.preventDefault();
@@ -127,7 +130,7 @@ jQuery(document).ready(function($) {
 
 
 
-	// Search box responsive stuff
+	// 검색 상자 응답성 항목
 
 	$('.search-box input').on('focus', function() {
 		if($(window).width() <= 1360) {
